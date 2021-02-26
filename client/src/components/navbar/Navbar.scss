@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+
+.navbar {
+	position: fixed;
+	width: 100%;
+	// border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	background: #000;
+
+	.navbar-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: #fff;
+
+		.navbar-logo {
+			span {
+				font-family: "Shadows Into Light";
+			}
+
+			cursor: pointer;
+			margin: 0 10px;
+			padding: 20px;
+			font-family: "proxima_nova_rgbold";
+			font-size: 30px;
+		}
+
+		.navbar-links {
+			display: flex;
+			margin: 0 20px;
+
+			.navbar-link {
+				padding: 10px 20px;
+				margin-left: 10px;
+			}
+		}
+	}
+}
