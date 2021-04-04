@@ -12,7 +12,7 @@ const Loader = () => {
 	const [post, setPost] = useState(null);
 	useEffect(() => {
 		fetch("https://jsonplaceholder.typicode.com/posts/1")
-			.then(sleeper(1000))
+			.then(sleeper(4000))
 			.then((response) => response.json())
 			.then((response) => {
 				const { body } = response;

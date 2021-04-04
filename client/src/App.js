@@ -7,14 +7,15 @@ import Signup from "./components/signup/Signup";
 import Dashboard from "./components/dashboard/Dashboard";
 import Loader from "./components/loader/Loader";
 
+import Admin from "./components/admin/Admin";
+
 function App() {
 	return (
 		<div className="App">
 			<Navbar />
 			{/* <Login /> */}
 			{/* <Signup /> */}
-			{/* <Dashboard /> */}
-			<Loader />
+			<Dashboard />
 
 			<Footer />
 		</div>
