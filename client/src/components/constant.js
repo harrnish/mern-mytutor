@@ -11,4 +11,8 @@ export const COLLEGELIST = [
 		name: "Lakehead",
 		value: "Lakehead",
 	},
+	{
+		name: "SVIT",
+		value: "SVIT",
+	},
 ];

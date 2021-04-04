@@ -22,15 +22,6 @@ const Reviews = () => {
 							deserunt, quod optio ut nemo facilis similique maiores eligendi
 							adipisci, sed dolore corporis consequuntur.
 						</div>
-						<div className="review-reactions">
-							<div className="review-like-btn review-act-btn">
-								<ThumbUpAltOutlinedIcon /> &nbsp;{" "}
-								<spam className="review-likes-count">27 likes</spam>
-							</div>
-							<div className="review-delete-btn review-act-btn">
-								<DeleteIcon />
-							</div>
-						</div>
 					</div>
 					<div className="review-card">
 						<div className="review-account">USER45KIO</div>

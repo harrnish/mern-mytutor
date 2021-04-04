@@ -19,6 +19,10 @@ const ProfSchema = new Schema({
 		type: Boolean,
 		default: false,
 	},
+	reviews: {
+		type: Array,
+		default: [],
+	},
 });
 
 module.exports = Prof = mongoose.model("prof", ProfSchema);

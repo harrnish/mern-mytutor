@@ -22,36 +22,11 @@ router.get("/", (req, res) => {
 	}
 });
 
-router.get("/colleges", async (req, res) => {
+router.get("/colleges/:college", async (req, res) => {
 	try {
-		const profs = await Prof.find();
-		console.log(profs);
-		let updatedProfs = profs
-			.map((prof) => {
-				if (prof.institution === "Conestoga") {
-					return {
-						fname: prof.fname,
-						institution: prof.institution,
-					};
-				}
-
-				if (prof.institution === "Humber") {
-					return {
-						fname: prof.fname,
-						institution: prof.institution,
-					};
-				}
-
-				if (prof.institution === "Lakehead") {
-					return {
-						fname: prof.fname,
-						institution: prof.institution,
-					};
-				}
-				return null;
-			})
-			.filter((e) => e);
-		res.send(updatedProfs);
+		let { college } = req.params;
+		const profs = await Prof.find({ institution: college });
+		res.send(profs);
 	} catch (e) {
 		res.status(400).json({ msg: e.message });
 	}
@@ -62,7 +37,10 @@ router.post("/", (req, res) => {
 		fname: req.body.fname,
 		lname: req.body.lname,
 		institution: req.body.institution,
+		reviews: req.body.reviews,
 	});
+	console.log(newProf);
+	// console.log(req.body.reviews);
 
 	newProf.save().then((prof) => res.json(prof));
 });
