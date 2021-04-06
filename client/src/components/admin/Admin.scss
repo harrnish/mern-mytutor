@@ -1,0 +1,48 @@
+.admin {
+	.admin-container {
+		width: 80%;
+		margin: 0px auto;
+		padding: 140px 0;
+
+		.requests-container {
+			margin: 20px 0;
+			.prof-request {
+				width: 100%;
+				padding: 40px;
+				border: 4px solid #000;
+				text-transform: uppercase;
+				margin: 16px 0;
+
+				h3 {
+					margin: 12px 0 !important;
+				}
+
+				p {
+					font-family: "proxima_nova_rgbold";
+					color: rgb(195, 195, 195);
+				}
+
+				.prof-request-controls {
+					margin: 20px 0 0px 0;
+
+					.button {
+						padding: 16px 24px;
+						margin-right: 10px;
+						border: 2px solid #000;
+						text-transform: uppercase;
+						font-family: "proxima_nova_rgbold";
+						cursor: pointer;
+					}
+
+					.approve-btn {
+						background: #000;
+						color: #fff;
+					}
+					.decline-btn {
+						background: #fff;
+					}
+				}
+			}
+		}
+	}
+}

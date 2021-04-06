@@ -1,0 +1,44 @@
+.request-form {
+	width: 100%;
+	// background: red;
+
+	form {
+		display: flex;
+		flex-direction: column;
+		input {
+			margin: 4px 0;
+			padding: 20px;
+			width: 100%;
+			border: 2px solid #000 !important;
+			border-radius: 0 !important;
+			outline: none !important;
+			font-size: 14px;
+			letter-spacing: 1px;
+		}
+
+		input:focus {
+			border: 2px solid #000 !important;
+			border-radius: 0 !important;
+			outline: none !important;
+		}
+	}
+}
+
+select {
+	margin: 4px 0 8px 0;
+	padding: 20px;
+	width: 100%;
+	border: 2px solid #000 !important;
+	border-radius: 0 !important;
+	outline: none !important;
+	font-size: 14px;
+	letter-spacing: 1px;
+	background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+		no-repeat right #fff;
+	-webkit-appearance: none;
+	background-position-x: 98%;
+}
+
+option {
+	background: #fff;
+}

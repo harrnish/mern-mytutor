@@ -1,0 +1,38 @@
+.reviews {
+	.reviews-container {
+		.reviews-list {
+			.review-card {
+				margin: 20px 0;
+				padding: 50px 40px 36px 40px;
+				background: #f0f0f0;
+				cursor: pointer;
+
+				.review-account {
+					text-transform: uppercase;
+					font-family: "proxima_nova_rgbold", Helvetica, Arial, sans-serif;
+					font-size: 24px;
+				}
+
+				.review-text {
+					padding: 20px 0;
+					color: rgb(104, 104, 104);
+				}
+
+				.review-reactions {
+					display: flex;
+					justify-content: space-between;
+					padding: 20px 0 0 0;
+
+					.review-likes-count {
+						position: relative;
+						top: -6px;
+					}
+
+					.review-act-btn {
+						margin-right: 20px;
+					}
+				}
+			}
+		}
+	}
+}
