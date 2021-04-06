@@ -1,8 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../search/Search.scss";
-import "../request/Request.scss";
+import "../account/Account.scss";
 import { COLLEGELIST } from "../../constant";
 import axios from "axios";
+
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
 const Search = () => {
 	const [college, setCollege] = useState("Conestoga");
@@ -10,6 +17,8 @@ const Search = () => {
 	const [currentProf, setCurrentProf] = useState("");
 	const [searchToggle, setSearchToggle] = useState(false);
 	const [profReview, setProfReview] = useState("");
+	const [open, setOpen] = React.useState(false);
+
 	const handleChange = (event) => {
 		//console.log(event.target);
 
@@ -32,11 +41,19 @@ const Search = () => {
 		setSearchToggle(false);
 	};
 
-	function handleClick(event) {
-		event.preventDefault();
+	const handleClick = (id) => {
+		// console.log( id,profReview);
 
-		axios.post("http://localhost:4000/api/profs", { profReview });
-	}
+		axios.post(`http://localhost:4000/api/profs/addreview/${id}`, {
+			profReview,
+		});
+
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
+	};
 
 	const fetchColleges = (college) => {
 		axios
@@ -59,7 +76,7 @@ const Search = () => {
 		<div className="search">
 			<div className="search-container">
 				<div className="section-title">
-					<h1>Add Review</h1>
+					<h1>Post Review</h1>
 				</div>
 				<br />
 				<p>
@@ -101,11 +118,14 @@ const Search = () => {
 									return (
 										<div>
 											<br />
+											<br />
 											Post a review for <br />
-											<h1>
+											<h1 className="reviewProfName">
 												{prof.fname} {prof.lname}
 											</h1>
+											<br />
 											<input
+												className="postReview"
 												type="text"
 												name="review"
 												value={profReview.review}
@@ -114,13 +134,34 @@ const Search = () => {
 												placeholder="Write a review"
 											/>
 											<button
-												onClick={handleClick}
+												onClick={() => handleClick(prof._id)}
 												type="button"
 												className="btn btn-submit btn-sq"
 												// value="Send Request"
 											>
-												Send Requrest
+												Post
 											</button>
+											<Dialog
+												open={open}
+												onClose={handleClose}
+												aria-labelledby="alert-dialog-title"
+												aria-describedby="alert-dialog-description"
+											>
+												<DialogTitle id="alert-dialog-title">
+													Thank you for posting a review! You can find out your
+													review posted on the search tab!
+												</DialogTitle>
+
+												<DialogActions>
+													<Button
+														onClick={handleClose}
+														color="primary"
+														autoFocus
+													>
+														Close
+													</Button>
+												</DialogActions>
+											</Dialog>
 										</div>
 									);
 								}

@@ -73,8 +73,6 @@ const Request = () => {
 							))}
 						</select>
 
-						<br />
-
 						<button
 							onClick={handleClick}
 							type="button"

@@ -16,7 +16,7 @@ function App() {
 			{/* <Login /> */}
 			{/* <Signup /> */}
 			<Dashboard />
-
+			<Admin />
 			<Footer />
 		</div>
 	);

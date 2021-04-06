@@ -12,7 +12,19 @@ export const COLLEGELIST = [
 		value: "Lakehead",
 	},
 	{
-		name: "SVIT",
-		value: "SVIT",
+		name: "Centennial",
+		value: "Centennial",
+	},
+	{
+		name: "Lambton",
+		value: "Lambton",
+	},
+	{
+		name: "Fanshawe",
+		value: "Fanshawe",
+	},
+	{
+		name: "Langara",
+		value: "Langara",
 	},
 ];

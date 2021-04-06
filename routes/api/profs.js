@@ -45,6 +45,24 @@ router.post("/", (req, res) => {
 	newProf.save().then((prof) => res.json(prof));
 });
 
+router.post("/addreview/:id", async (req, res) => {
+	try {
+		let id = req.params.id;
+		let profReview = req.body.profReview;
+
+		const filter = { _id: id };
+		// const update = { isApproved: isApproved };
+
+		// console.log("here", id, profReview);
+		let newProf = await Prof.findOneAndUpdate(filter, {
+			$push: { reviews: [profReview] },
+		});
+		res.send(newProf);
+	} catch (err) {
+		console.log(err);
+	}
+});
+
 router.post("/:id", async (req, res) => {
 	try {
 		let id = req.params.id;

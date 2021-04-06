@@ -52,7 +52,7 @@ function TabPanel(props) {
 			{...other}
 		>
 			{value === index && (
-				<Box p={3}>
+				<Box p={2}>
 					<div>{children}</div>
 				</Box>
 			)}
@@ -111,12 +111,8 @@ const Dashboard = () => {
 								{...a11yProps(0)}
 							/>
 							<Tab icon={<SearchIcon />} aria-label="help" {...a11yProps(1)} />
-							<Tab
-								icon={<ChatIcon />}
-								aria-label="shopping"
-								{...a11yProps(2)}
-							/>
-							<Tab icon={<PersonAddIcon />} aria-label="up" {...a11yProps(3)} />
+
+							<Tab icon={<PersonAddIcon />} aria-label="up" {...a11yProps(2)} />
 						</Tabs>
 					</AppBar>
 
@@ -127,10 +123,8 @@ const Dashboard = () => {
 						<TabPanel value={value} index={1}>
 							<Search options={options} />
 						</TabPanel>
+
 						<TabPanel value={value} index={2}>
-							<Reviews />
-						</TabPanel>
-						<TabPanel value={value} index={3}>
 							<Request />
 						</TabPanel>
 					</div>
