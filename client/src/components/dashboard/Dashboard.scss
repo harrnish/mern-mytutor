@@ -1,0 +1,59 @@
+.dashboard {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	padding-top: 84px;
+
+	.dashboard-container {
+		width: 100% !important;
+
+		.MuiTabs-flexContainer {
+			display: flex;
+			justify-content: space-around;
+			background: #000;
+			width: 70%;
+			margin: 0 auto;
+		}
+
+		.MuiTabs-scrollable {
+			background: #000;
+		}
+	}
+}
+
+.appbar-custom {
+	position: fixed !important;
+	top: 80px !important;
+}
+
+.tab-container {
+	width: 60%;
+	margin: 70px auto;
+}
+
+@media (max-width: 900px) {
+	.dashboard {
+		.dashboard-container {
+			width: 100%;
+		}
+
+		.appbar-custom {
+			position: fixed !important;
+			top: 80px !important;
+		}
+
+		.MuiTabs-flexContainer {
+			display: flex;
+			justify-content: space-around;
+			background: #000;
+			width: 94% !important;
+			margin: 0 auto;
+		}
+
+		.tab-container {
+			width: 94%;
+			margin: 80px auto;
+		}
+	}
+}
