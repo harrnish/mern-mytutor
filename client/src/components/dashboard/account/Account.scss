@@ -1,0 +1,64 @@
+.account-form {
+	width: 100%;
+	// background: red;
+
+	form {
+		display: flex;
+		flex-direction: column;
+		input {
+			margin: 4px 0;
+			padding: 20px;
+			width: 100%;
+			border: 2px solid #000 !important;
+			border-radius: 0 !important;
+			outline: none !important;
+			font-size: 14px;
+			letter-spacing: 1px;
+		}
+
+		input:focus {
+			border: 2px solid #000 !important;
+			border-radius: 0 !important;
+			outline: none !important;
+		}
+	}
+}
+
+input {
+	margin: 4px 0 8px 0;
+	padding: 20px;
+	width: 100%;
+	border: 2px solid #000 !important;
+	border-radius: 0 !important;
+	outline: none !important;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+input:focus {
+	border: 2px solid #000 !important;
+	border-radius: 0 !important;
+	outline: none !important;
+}
+
+.btn-submit {
+	width: 100%;
+	cursor: pointer;
+	border: 2px solid #000;
+	background: #000;
+	color: #fff;
+	padding: 20px 0;
+	text-transform: uppercase;
+	font-family: "proxima_nova_rgbold";
+	border-radius: 0;
+}
+
+.btn-submit:hover {
+	border: 2px solid #000;
+	background: #000;
+	color: #fff;
+}
+
+h1.reviewProfName {
+	font-size: 60px;
+}

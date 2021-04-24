@@ -1,0 +1,42 @@
+# POST http://localhost:4000/api/users
+# content-type: application/json
+
+# {
+#     "name": "Nick",
+#     "email": "nick@nick.com",
+#     "password": "nick@nick"
+# }
+
+
+# POST http://localhost:5000/api/profs
+# content-type: application/json
+
+# {
+#     "fname": "Zakir",
+#     "lname": "Khyzm22",
+#     "institution": "Conestoga College"
+# }
+//GET http://localhost:5000/api/users
+
+
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+
+{
+    "name": "admin",
+    "email": "admin@j.com",
+    "password": "admin",
+    "role": "admin"
+}
+
+//GET http://localhost:5000/users/logout
+
+POST http://localhost:5000/users/login
+Content-Type: application/json
+
+{
+    "username": "admin22",
+    "password": "admin222"
+}
+
+
