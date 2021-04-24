@@ -23,7 +23,6 @@ const Request = () => {
 	const [open, setOpen] = React.useState(false);
 
 	function handleChange(event) {
-		//console.log(event.target);
 		const { name, value } = event.target;
 
 		setInput((prevInput) => {
@@ -32,7 +31,6 @@ const Request = () => {
 				[name]: value,
 			};
 		});
-		// console.log(name, value);
 	}
 
 	function handleClick(event) {
@@ -43,9 +41,8 @@ const Request = () => {
 			lname: input.profLName,
 			institution: input.profUni,
 		};
-		// console.log(input);
 
-		axios.post("http://localhost:4000/api/profs", newProff);
+		axios.post("http://localhost:5000/profs", newProff);
 		setOpen(true);
 	}
 
@@ -54,13 +51,12 @@ const Request = () => {
 	};
 
 	const { transcript, resetTranscript } = useSpeechRecognition();
-	// const { transcript2, resetTranscript2 } = useSpeechRecognition();
 
 	return (
 		<div className="request">
 			<div className="request-container">
 				<div className="section-title">
-					<h1>Request Listing</h1>
+					<h1>&nbsp; &nbsp; &nbsp; &nbsp;Request Listing</h1>
 				</div>
 				<br />
 				<div className="request-form">
@@ -86,7 +82,7 @@ const Request = () => {
 						<input
 							type="text"
 							name="profFName"
-							value={(input.profName, transcript)}
+							value={input.profFName}
 							autoComplete="off"
 							onChange={handleChange}
 							placeholder="Professor first Name"
@@ -95,7 +91,7 @@ const Request = () => {
 						<input
 							type="text"
 							name="profLName"
-							value={input.profName}
+							value={input.profLName}
 							autoComplete="off"
 							onChange={handleChange}
 							placeholder="Professor last Name"
@@ -116,7 +112,6 @@ const Request = () => {
 							onClick={handleClick}
 							type="button"
 							className="btn btn-submit btn-sq"
-							// value="Send Request"
 						>
 							Send Request
 						</button>

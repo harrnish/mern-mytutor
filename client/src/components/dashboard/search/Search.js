@@ -9,8 +9,6 @@ const Search = () => {
 	const [currentProf, setCurrentProf] = useState("");
 	const [searchToggle, setSearchToggle] = useState(false);
 	const handleChange = (event) => {
-		//console.log(event.target);
-
 		const { name, value } = event.target;
 
 		setCollege(value);
@@ -19,8 +17,6 @@ const Search = () => {
 	};
 
 	const handleChangeProf = (event) => {
-		//console.log(event.target);
-
 		const { name, value } = event.target;
 		setCurrentProf(value);
 		setSearchToggle(false);
@@ -28,10 +24,9 @@ const Search = () => {
 
 	const fetchColleges = (college) => {
 		axios
-			.get(`http://localhost:4000/api/profs/colleges/${college}`)
+			.get(`http://localhost:5000/profs/colleges/${college}`)
 			.then((response) => {
 				const data = response.data;
-				// console.log(data);
 				setProfList(data);
 				setCurrentProf(data[0].fname);
 			})

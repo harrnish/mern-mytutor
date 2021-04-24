@@ -5,7 +5,6 @@
 	width: 100%;
 	// border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 	background: #000;
-	z-index: 2 !important;
 
 	.navbar-container {
 		display: flex;
@@ -23,7 +22,6 @@
 			padding: 20px;
 			font-family: "proxima_nova_rgbold";
 			font-size: 30px;
-			text-decoration: none !important;
 		}
 
 		.navbar-links {
@@ -33,19 +31,7 @@
 			.navbar-link {
 				padding: 10px 20px;
 				margin-left: 10px;
-				text-decoration: none !important;
 			}
 		}
-	}
-}
-
-.admin-link {
-	background: lightseagreen;
-	border: none;
-	padding: 12px 20px 10px 20px !important;
-
-	&:hover {
-		background: lightseagreen;
-		color: #fff;
 	}
 }

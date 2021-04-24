@@ -23,8 +23,6 @@ const Search = () => {
 	const filter = new Filter();
 	filter.addWords("asshole", "fuck", "bitch");
 	const handleChange = (event) => {
-		//console.log(event.target);
-
 		const { name, value } = event.target;
 
 		setCollege(value);
@@ -37,17 +35,15 @@ const Search = () => {
 	};
 
 	const handleChangeProf = (event) => {
-		//console.log(event.target);
-
 		const { name, value } = event.target;
 		setCurrentProf(value);
 		setSearchToggle(false);
 	};
 
 	const handleClick = (id) => {
-		// console.log( id,profReview);
+		console.log(id, profReview);
 
-		axios.post(`http://localhost:4000/api/profs/addreview/${id}`, {
+		axios.post(`http://localhost:5000/profs/addreview/${id}`, {
 			profReview,
 		});
 
@@ -60,10 +56,9 @@ const Search = () => {
 
 	const fetchColleges = (college) => {
 		axios
-			.get(`http://localhost:4000/api/profs/colleges/${college}`)
+			.get(`http://localhost:5000/profs/colleges/${college}`)
 			.then((response) => {
 				const data = response.data;
-				// console.log(data);
 				setProfList(data);
 				setCurrentProf(data[0].fname);
 			})

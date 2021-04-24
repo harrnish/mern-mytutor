@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
 	try {
 		const profs = Prof.find();
 		if (!profs) throw Error("No professor found");
-		else Prof.find().then((profs) => res.json(profs));
+		else Prof.find({ isApproved: false }).then((profs) => res.json(profs));
 	} catch (e) {
 		res.status(400).json({ msg: e.message });
 	}
@@ -40,7 +40,6 @@ router.post("/", (req, res) => {
 		reviews: req.body.reviews,
 	});
 	console.log(newProf);
-	// console.log(req.body.reviews);
 
 	newProf.save().then((prof) => res.json(prof));
 });
@@ -51,9 +50,7 @@ router.post("/addreview/:id", async (req, res) => {
 		let profReview = req.body.profReview;
 
 		const filter = { _id: id };
-		// const update = { isApproved: isApproved };
 
-		// console.log("here", id, profReview);
 		let newProf = await Prof.findOneAndUpdate(filter, {
 			$push: { reviews: [profReview] },
 		});

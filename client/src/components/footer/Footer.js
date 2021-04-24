@@ -7,8 +7,10 @@ const Footer = () => {
 		<div className="footer">
 			<div className="footer-container">
 				<span>
-					&copy; 2021, MyTutor.{" "}
-					<a href="https://www.paypal.com/paypalme/harrnish">Donate</a>
+					&copy; 2021, MyTutor. All rights reserved.{" "}
+					<a href="https://www.paypal.com/paypalme/harrnish" target="_blank">
+						Donate now!
+					</a>
 				</span>
 			</div>
 		</div>

@@ -18,7 +18,7 @@ const Admin = () => {
 	}, []);
 	const getProfs = () => {
 		axios
-			.get("http://localhost:4000/api/profs")
+			.get("http://localhost:5000/profs")
 			.then((response) => {
 				const data = response.data;
 				setProfs(data);
@@ -26,27 +26,21 @@ const Admin = () => {
 			})
 			.catch((error) => {
 				if (!error.response) {
-					this.errorStatus = "Error: Network Error";
+					// this.errorStatus = "Error: Network Error";
 				} else {
-					this.errorStatus = error.response.data.message;
+					// this.errorStatus = error.response.data.message;
 				}
 			});
 	};
 
 	const handleRequest = (isApproved, id) => {
-		// alert(isApproved + " " + id);
 		axios
-			.post(`http://localhost:4000/api/profs/${id}`, { isApproved })
+			.post(`http://localhost:5000/profs/${id}`, { isApproved })
 			.then((response) => {
 				const data = response.data;
 				getProfs();
 			})
 			.catch((error) => {
-				// if (!error.response) {
-				// 	this.errorStatus = "Error: Network Error";
-				// } else {
-				// 	this.errorStatus = error.response.data.message;
-				// }
 				console.log(error);
 			});
 	};
